@@ -70,7 +70,7 @@ const AboutSection = () => {
                 viewport={{ once: true }}
                 transition={{ delay: 0.5, type: "spring" }}
               >
-                Est. 1998
+                Est. 1988
               </motion.div>
             </div>
           </motion.div>
@@ -94,7 +94,7 @@ const AboutSection = () => {
               <p>
                 Nestled in the heart of Gujarat,{" "}
                 <strong className="text-foreground">Madhuvan Mango Farm</strong>{" "}
-                has been a family-owned treasure for over 25 years.
+                has been a family-owned treasure for over 40 years.
               </p>
 
               <p>

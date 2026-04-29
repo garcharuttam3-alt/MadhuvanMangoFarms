@@ -70,20 +70,32 @@ const MangoVarietiesSection = () => {
                   Queen of Mangoes
                 </motion.div>
 
-                <motion.img
-                  src={mangoKesar}
-                  alt="Premium Kesar Mango"
-                  className="w-full max-w-[280px] md:max-w-[340px] h-auto object-contain drop-shadow-2xl relative z-10"
-                  animate={{ 
-                    y: [0, -10, 0],
-                    rotate: [0, 2, -2, 0]
-                  }}
-                  transition={{ 
-                    duration: 5, 
-                    repeat: Infinity, 
-                    ease: "easeInOut" 
-                  }}
-                />
+                <div className="w-full flex justify-center items-center">
+  <motion.img
+    src={mangoKesar}
+    alt="Premium Kesar Mango"
+    className="
+      w-full 
+      max-w-[180px] 
+      sm:max-w-[220px] 
+      md:max-w-[300px] 
+      h-auto 
+      object-contain 
+      drop-shadow-2xl 
+      z-10
+      mt-10
+    "
+    animate={{ 
+      y: [0, -6, 0],
+      rotate: [0, 1.5, -1.5, 0]
+    }}
+    transition={{ 
+      duration: 5, 
+      repeat: Infinity, 
+      ease: "easeInOut" 
+    }}
+  />
+</div>
               </motion.div>
 
               {/* Content Section */}
@@ -134,25 +146,72 @@ const MangoVarietiesSection = () => {
                 </div>
 
                 {/* Price & CTA */}
-                <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 pt-6 border-t border-border">
-                  <div>
-                    <p className="text-sm text-muted-foreground mb-1">Price per dozen</p>
-                    <p className="text-3xl md:text-4xl font-bold text-primary">₹699</p>
-                  </div>
-                  
-                  <motion.a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn-whatsapp text-base py-3 px-6 sm:ml-auto"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <MessageCircle className="w-5 h-5" />
-                    Order on WhatsApp
-                  </motion.a>
-                </div>
-              </div>
+                <div className="flex flex-col sm:flex-row items-center justify-center sm:justify-between gap-4 pt-6 border-t border-border">
+  
+{/* Price Section */}
+<div className="text-center sm:text-left w-full " >
+  <p className="text-sm text-muted-foreground mb-2">
+    Price per dozen
+  </p>
+
+  {/* Size Options (Fixed Responsive Grid) */}
+  <div className="mt-4 gap-2  flex">
+
+    {/* Big */}
+    <a
+      href="https://wa.me/919725131748?text=I want Big Size (28-30 mangoes) ₹1500"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
+    >
+      <p className="font-semibold text-sm">Big 🥭</p>
+      <p className="text-xs text-muted-foreground">28–30 pcs</p>
+      <p className="text-lg font-bold text-primary">₹1500</p>
+    </a>
+
+    {/* Medium */}
+    <a
+      href="https://wa.me/919725131748?text=I want Medium Size (33-38 mangoes) ₹1250"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block border-2 border-primary rounded-lg p-4 text-center shadow-md w-full scale-[1.02]"
+    >
+      <p className="font-semibold text-sm">Medium ⭐</p>
+      <p className="text-xs text-muted-foreground">33–38 pcs</p>
+      <p className="text-lg font-bold text-primary">₹1250</p>
+    </a>
+
+    {/* Small */}
+    <a
+      href="https://wa.me/919725131748?text=I want Small Size (38-42 mangoes) ₹1000"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
+    >
+      <p className="font-semibold text-sm">Small 🥭</p>
+      <p className="text-xs text-muted-foreground">38–42 pcs</p>
+      <p className="text-lg font-bold text-primary">₹1000</p>
+    </a>
+
+  </div>
+</div>
+
+<div>
+  {/* Button */}
+  <motion.a
+    href={whatsappUrl}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="btn-whatsapp text-base py-3 px-6"
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+  >
+    <MessageCircle className="w-3 h-3" />
+    Order on WhatsApp
+  </motion.a>
+  </div>  
+
+</div>              </div>
             </div>
           </div>
         </motion.div>

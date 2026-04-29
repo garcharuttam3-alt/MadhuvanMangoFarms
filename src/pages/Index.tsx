@@ -11,21 +11,42 @@ import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       <Header />
-      <main>
-        <HeroSection />
-        <MangoVarietiesSection />
-        <WhyChooseSection />
-        <JourneySection />
-        <HowToOrderSection />
-        <GallerySection />
-        <AboutSection />
+
+      <main className="w-full">
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <HeroSection />
+        </section>
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <MangoVarietiesSection />
+        </section>
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <WhyChooseSection />
+        </section>
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <JourneySection />
+        </section>
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <HowToOrderSection />
+        </section>
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <GallerySection />
+        </section>
+
+        <section className="px-4 sm:px-6 md:px-10 lg:px-16">
+          <AboutSection />
+        </section>
       </main>
+
       <Footer />
       <FloatingWhatsApp />
     </div>
   );
 };
-
 export default Index;

@@ -134,7 +134,7 @@ const Footer = () => {
               </h3>
               <div className="bg-earth-light/30 rounded-2xl p-6 border border-primary/20">
                 <p className="text-cream-dark/90 text-sm mb-4">
-                  🥭 <strong className="text-primary">Mango Season 2024</strong> is here!
+                  🥭 <strong className="text-primary">Mango Season 2026</strong> is here!
                   Pre-book your favorite varieties now for guaranteed freshness.
                 </p>
                 <div className="space-y-2 text-xs text-cream-dark/70">
@@ -163,7 +163,7 @@ const Footer = () => {
         <div className="container-custom mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-cream-dark/60 text-sm text-center md:text-left">
-              © 2024 Madhuvan Mango Farm. All rights reserved.
+              © 2026 Madhuvan Mango Farm. All rights reserved.
             </p>
             <p className="text-cream-dark/60 text-sm italic font-heading">
               "From our farm to your home" 🥭
