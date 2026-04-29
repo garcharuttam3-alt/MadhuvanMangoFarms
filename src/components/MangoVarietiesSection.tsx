@@ -153,16 +153,16 @@ const MangoVarietiesSection = () => {
   <p className="text-sm text-muted-foreground mb-2">
     Price per dozen
   </p>
-
+ 
   {/* Size Options (Fixed Responsive Grid) */}
-  <div className="mt-4 gap-2  flex">
+<div className="grid grid-cols-1 gap-2">
 
     {/* Big */}
     <a
       href="https://wa.me/919725131748?text=I want Big Size (28-30 mangoes) ₹1500"
       target="_blank"
       rel="noopener noreferrer"
-      className="block border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
+      className=" border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
     >
       <p className="font-semibold text-sm">Big 🥭</p>
       <p className="text-xs text-muted-foreground">28–30 pcs</p>
@@ -174,7 +174,7 @@ const MangoVarietiesSection = () => {
       href="https://wa.me/919725131748?text=I want Medium Size (33-38 mangoes) ₹1250"
       target="_blank"
       rel="noopener noreferrer"
-      className="block border-2 border-primary rounded-lg p-4 text-center shadow-md w-full scale-[1.02]"
+      className=" border-2 border-primary rounded-lg p-4 text-center shadow-md w-full scale-[1.02]"
     >
       <p className="font-semibold text-sm">Medium ⭐</p>
       <p className="text-xs text-muted-foreground">33–38 pcs</p>
@@ -186,7 +186,7 @@ const MangoVarietiesSection = () => {
       href="https://wa.me/919725131748?text=I want Small Size (38-42 mangoes) ₹1000"
       target="_blank"
       rel="noopener noreferrer"
-      className="block border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
+      className=" border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
     >
       <p className="font-semibold text-sm">Small 🥭</p>
       <p className="text-xs text-muted-foreground">38–42 pcs</p>

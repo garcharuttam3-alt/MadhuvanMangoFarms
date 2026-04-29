@@ -5,18 +5,18 @@ import logo from "@/assets/logo.png";
 const HeroSection = () => {
   return (
     <section
-      id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <img
-          src={heroBg}
-          alt="Mango orchard at golden hour"
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/90" />
-      </div>
+  id="home"
+  className="bg-earth w-full h-screen flex items-center justify-center overflow-hidden"
+>
+     {/* Background Image */}
+<div className="absolute inset-0 w-full h-full">
+  <img
+    src={heroBg}
+    alt="Mango orchard at golden hour"
+    className="w-full h-full object-cover object-center"
+  />
+  <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/90" />
+</div>
 
       {/* Floating Decorative Elements */}
       <motion.div
