@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
   id="home"
-  className="bg-earth w-full h-screen flex items-center justify-center overflow-hidden"
+  className=" w-full h-screen flex items-center justify-center overflow-hidden"
 >
      {/* Background Image */}
 <div className="absolute inset-0 w-full h-full">
