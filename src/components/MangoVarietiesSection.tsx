@@ -55,20 +55,23 @@ const MangoVarietiesSection = () => {
                 <div className="absolute top-8 left-8 w-20 h-20 bg-mango-yellow/20 rounded-full blur-xl" />
                 <div className="absolute bottom-12 right-12 w-32 h-32 bg-mango-green/10 rounded-full blur-2xl" />
                 
-                {/* Season Badge */}
-                <div className="absolute top-6 right-6 bg-secondary text-secondary-foreground text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                  🗓️ May - July
-                </div>
+                {/* Badges row — always same line, never overlap */}
+                <div className="absolute top-4 sm:top-6 left-4 right-4 sm:left-6 sm:right-6 flex items-center justify-between gap-2 z-10">
+                  {/* Queen Badge */}
+                  <motion.div
+                    className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 shrink-0"
+                    animate={{ scale: [1, 1.05, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    <Award className="w-3.5 h-3.5" />
+                    Queen of Mangoes
+                  </motion.div>
 
-                {/* Queen Badge */}
-                <motion.div 
-                  className="absolute top-6 left-6 bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, repeat: Infinity }}
-                >
-                  <Award className="w-3.5 h-3.5" />
-                  Queen of Mangoes
-                </motion.div>
+                  {/* Season Badge */}
+                  <div className="bg-secondary text-secondary-foreground text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg shrink-0">
+                    🗓️ May - July
+                  </div>
+                </div>
 
                 <div className="w-full flex justify-center items-center">
   <motion.img
