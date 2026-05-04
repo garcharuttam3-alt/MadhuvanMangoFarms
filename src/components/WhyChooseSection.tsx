@@ -31,14 +31,7 @@ const features = [
 
 const WhyChooseSection = () => {
   // Load Elfsight script once
-  useEffect(() => {
-    if (!document.querySelector('script[src="https://elfsightcdn.com/platform.js"]')) {
-      const script = document.createElement("script");
-      script.src = "https://elfsightcdn.com/platform.js";
-      script.async = true;
-      document.body.appendChild(script);
-    }
-  }, []);
+
 
   return (
     <section id="why-us" className="section-padding bg-background">
@@ -130,21 +123,69 @@ const WhyChooseSection = () => {
           ))}
         </motion.div>
 
-        {/* Google Reviews Section */}
-        <motion.div
-          className="mt-20 bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border/50"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
+       {/* Reviews Container */}
+<div className="mt-10">
 
+  {/* Mobile Slider */}
+  <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory sm:hidden pb-2">
+    
+    {/* Card */}
+    <div className="min-w-[85%] snap-center bg-background rounded-xl p-5 shadow-sm border border-border/50">
+      <h4 className="font-semibold mb-1">Rahul Patel</h4>
+      <div className="text-yellow-400 text-sm mb-2">★★★★★</div>
+      <p className="text-sm text-muted-foreground">
+        Excellent service, very fast and professional. Highly recommended!
+      </p>
+    </div>
 
-          <div
-            className="elfsight-app-aa6cbd54-4e1d-4b74-a34c-6576910a5994"
-            data-elfsight-app-lazy
-          />
-        </motion.div>
+    <div className="min-w-[85%] snap-center bg-background rounded-xl p-5 shadow-sm border border-border/50">
+      <h4 className="font-semibold mb-1">Priya Shah</h4>
+      <div className="text-yellow-400 text-sm mb-2">★★★★★</div>
+      <p className="text-sm text-muted-foreground">
+        Amazing experience. Quality work and great support team.
+      </p>
+    </div>
+
+    <div className="min-w-[85%] snap-center bg-background rounded-xl p-5 shadow-sm border border-border/50">
+      <h4 className="font-semibold mb-1">Amit Verma</h4>
+      <div className="text-yellow-400 text-sm mb-2">★★★★☆</div>
+      <p className="text-sm text-muted-foreground">
+        Good service overall, slight delay but satisfied.
+      </p>
+    </div>
+
+  </div>
+
+  {/* Desktop Grid */}
+  <div className="hidden sm:grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+    
+    <div className="bg-background rounded-xl p-5 shadow-sm border border-border/50">
+      <h4 className="font-semibold mb-1">Rahul Patel</h4>
+      <div className="text-yellow-400 text-sm mb-2">★★★★★</div>
+      <p className="text-sm text-muted-foreground">
+        Excellent service, very fast and professional. Highly recommended!
+      </p>
+    </div>
+
+    <div className="bg-background rounded-xl p-5 shadow-sm border border-border/50">
+      <h4 className="font-semibold mb-1">Priya Shah</h4>
+      <div className="text-yellow-400 text-sm mb-2">★★★★★</div>
+      <p className="text-sm text-muted-foreground">
+        Amazing experience. Quality work and great support team.
+      </p>
+    </div>
+
+    <div className="bg-background rounded-xl p-5 shadow-sm border border-border/50">
+      <h4 className="font-semibold mb-1">Amit Verma</h4>
+      <div className="text-yellow-400 text-sm mb-2">★★★★☆</div>
+      <p className="text-sm text-muted-foreground">
+        Good service overall, slight delay but satisfied.
+      </p>
+    </div>
+
+  </div>
+
+</div>
 
       </div>
     </section>

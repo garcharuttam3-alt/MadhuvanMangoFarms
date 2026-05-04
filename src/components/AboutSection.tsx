@@ -5,21 +5,7 @@ import logo from "@/assets/logo.png";
 const AboutSection = () => {
 
   // Load Elfsight script once
-  useEffect(() => {
-    const scriptSrc = "https://elfsightcdn.com/platform.js";
 
-    if (!document.querySelector(`script[src="${scriptSrc}"]`)) {
-      const script = document.createElement("script");
-      script.src = scriptSrc;
-      script.async = true;
-      document.body.appendChild(script);
-    } else {
-      // Re-init for SPA route changes
-      if (window.ELFSIGHT_APPS) {
-        window.ELFSIGHT_APPS.init();
-      }
-    }
-  }, []);
 
   return (
     <section
@@ -141,22 +127,7 @@ const AboutSection = () => {
         </div>
 
         {/* INSTAGRAM LIVE FEED */}
-        <motion.div
-          className="mt-24 bg-card rounded-3xl p-8 md:p-12 shadow-card border border-border/50"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h3 className="text-2xl md:text-3xl font-heading font-bold text-center mb-8">
-            Follow Us on Instagram
-          </h3>
-
-          <div
-            className="elfsight-app-3eb8d2b2-e381-452d-977a-ad95163ed9b7 min-h-[300px]"
-            data-elfsight-app-lazy
-          />
-        </motion.div>
+        
       </div>
     </section>
   );

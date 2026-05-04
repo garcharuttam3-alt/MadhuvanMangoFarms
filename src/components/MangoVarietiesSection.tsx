@@ -162,7 +162,7 @@ const MangoVarietiesSection = () => {
 
     {/* Big */}
     <a
-      href="https://wa.me/919725131748?text=I want Big Size (30-34 mangoes) ₹1600"
+      href="https://wa.me/919725131748?text=I want Big Size (30-34 mangoes) "
       target="_blank"
       rel="noopener noreferrer"
       className=" border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
@@ -174,7 +174,7 @@ const MangoVarietiesSection = () => {
 
     {/* Medium */}
     <a
-      href="https://wa.me/919725131748?text=I want Medium Size (35-39 mangoes) ₹1400"
+      href="https://wa.me/919725131748?text=I want Medium Size (35-39 mangoes) "
       target="_blank"
       rel="noopener noreferrer"
       className=" border-2 border-primary rounded-lg p-4 text-center shadow-md w-full scale-[1.02]"
@@ -186,7 +186,7 @@ const MangoVarietiesSection = () => {
 
     {/* Small */}
     <a
-      href="https://wa.me/919725131748?text=I want Small Size (40-44 mangoes) ₹1200"
+      href="https://wa.me/919725131748?text=I want Small Size (40-44 mangoes) "
       target="_blank"
       rel="noopener noreferrer"
       className=" border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"

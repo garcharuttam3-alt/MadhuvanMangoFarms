@@ -197,18 +197,46 @@ const Footer = () => {
           </div>
         </div>
       </div>
+ {/* 🔥 MAP SECTION (THEMED) */}
+          <div className="mt-16">
+            <div className="bg-earth-light/30 rounded-2xl p-6 md:p-8 border border-primary/20">
 
-      <div className="flex justify-center items-center">
-        <ul className="space-y-4">
-          <li className="flex items-start gap-3">
-            <MapPin className=" w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-            <div>
-              <p className="ml-1 text-cream text-sm font-medium">Location</p>
-              <iframe className="h-40  mt-10" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8209760452705!2d70.70438237922706!3d21.039848030622252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2c7a6290cabe5%3A0x7b53405ebd5dd54!2sMadhuvan%20mango%20farm!5e0!3m2!1sen!2sin!4v1769059018485!5m2!1sen!2sin" width="600" height="450" loading="lazy" ></iframe>
+              <div className="flex items-center gap-3 mb-4">
+                <MapPin className="w-5 h-5 text-primary" />
+                <p className="text-cream text-sm font-medium">
+                  Our Farm Location
+                </p>
+              </div>
+
+              <div className="overflow-hidden rounded-xl border border-primary/10">
+                <iframe
+                  className="w-full h-48 sm:h-64 md:h-80 lg:h-[420px] xl:h-[450px]"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3214.7048168463307!2d70.7092528!3d21.039848499999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be2c77afb43bef3%3A0x66744a989f4e413c!2sMadhuvan%20mango%20farm!5e1!3m2!1sen!2sin!4v1777895805335!5m2!1sen!2sin"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                ></iframe>
+              </div>
+
+              <div className="mt-4 flex justify-between items-center flex-wrap gap-3">
+                <p className="text-cream-dark/70 text-xs">
+                  Visit our farm in Gir 🥭
+                </p>
+
+                <a
+                  href="https://maps.app.goo.gl/ko4qLVQVJ3kCLcpU7"
+                  target="_blank"
+                  className="text-primary text-sm hover:underline"
+                >
+                  Open in Google Maps →
+                </a>
+              </div>
+
             </div>
-          </li>
-        </ul>
-      </div>
+          </div>
+
+     
+      
       {/* Bottom Bar */}
       <div className="border-t border-cream-dark/10">
         <div className="container-custom mx-auto px-4 py-6">

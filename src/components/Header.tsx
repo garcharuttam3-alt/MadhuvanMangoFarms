@@ -1,14 +1,20 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
-const navLinks = [
+type NavLinkType = {
+  href: string;
+  label: string;
+};
+
+const navLinks: NavLinkType[] = [
   { href: "#home", label: "Home" },
   { href: "#varieties", label: "Mangoes" },
   { href: "#why-us", label: "Why Us" },
   { href: "#journey", label: "Process" },
-  { href: "#gallery", label: "Gallery" },
+  { href: "/gallery", label: "Gallery" },
   { href: "#about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
@@ -16,7 +22,9 @@ const navLinks = [
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
+  // Scroll effect
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 30);
@@ -25,18 +33,57 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  // 🔥 FIXED LINK HANDLER
+  const renderLink = (link: NavLinkType, isMobile = false) => {
+    const isRoute = link.href.startsWith("/");
+    const isSection = link.href.startsWith("#");
+
+    const baseClass = isMobile
+      ? "text-lg font-medium text-gray-700"
+      : "text-foreground/80 hover:text-secondary font-medium transition";
+
+    // Route link (e.g. /gallery)
+    if (isRoute) {
+      return (
+        <Link key={link.href} to={link.href} className={baseClass}>
+          {link.label}
+        </Link>
+      );
+    }
+
+    // Section link (e.g. #about)
+    if (isSection) {
+      return (
+        <Link
+          key={link.href}
+          to={`/${link.href}`} // ✅ main fix
+          className={baseClass}
+          onClick={() => isMobile && setIsMobileMenuOpen(false)}
+        >
+          {link.label}
+        </Link>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <>
       {/* HEADER */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 will-change-[backdrop-filter] ${
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? "bg-white/70 backdrop-blur-lg border-b border-white/20 shadow-md py-2"
+            ? "bg-white/70 backdrop-blur-md border-b border-white/20 shadow-md py-2"
             : "bg-transparent py-4"
         }`}
       >
         <div className="container-custom mx-auto px-4 flex items-center justify-between">
-
           {/* Logo */}
           <motion.a
             href="#home"
@@ -52,15 +99,7 @@ const Header = () => {
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground/80 hover:text-secondary font-medium transition"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => renderLink(link))}
           </nav>
 
           {/* CTA */}
@@ -83,11 +122,11 @@ const Header = () => {
         </div>
       </header>
 
-      {/* MOBILE MENU OVERLAY (FIXED) */}
+      {/* MOBILE MENU */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
-            {/* DARK OVERLAY */}
+            {/* Overlay */}
             <motion.div
               className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40"
               initial={{ opacity: 0 }}
@@ -96,7 +135,7 @@ const Header = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             />
 
-            {/* MENU PANEL */}
+            {/* Panel */}
             <motion.div
               initial={{ x: "-100%" }}
               animate={{ x: 0 }}
@@ -114,16 +153,7 @@ const Header = () => {
 
               {/* Links */}
               <nav className="flex flex-col gap-4">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.href}
-                    href={link.href}
-                    className="text-lg font-medium text-gray-700"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {link.label}
-                  </a>
-                ))}
+                {navLinks.map((link) => renderLink(link, true))}
               </nav>
 
               {/* CTA */}
