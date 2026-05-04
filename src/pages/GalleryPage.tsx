@@ -34,7 +34,7 @@ const GalleryPage = (): JSX.Element => {
     <div className="min-h-screen bg-background">
       <Header />
 
-      <section className="px-3 sm:px-6 md:px-10 lg:px-16 py-10 sm:py-16">
+      <section className="px-3 sm:px-6 md:px-10 lg:px-16 py-10 sm:py-16 mt-20">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}

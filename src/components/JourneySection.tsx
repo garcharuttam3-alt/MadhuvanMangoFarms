@@ -119,7 +119,7 @@ const JourneySection = () => {
               </div>
 
               {/* Desktop Desktop Only Visual */}
-              <div className="hidden md:block absolute top-8 right-8 text-4xl opacity-20 grayscale">
+              <div className="  absolute top-8 right-8 text-4xl opacity-20 grayscale">
                 {step.visual}
               </div>
             </motion.div>
@@ -130,13 +130,11 @@ const JourneySection = () => {
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          className="mt-12 bg-mango-brown text-white rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden"
+          className=" bg-mango-brown text-white rounded-[2rem] p-8 md:p-12 text-center relative overflow-hidden"
         >
           <div className="relative z-10">
-            <h3 className="text-2xl md:text-4xl font-display mb-4">Taste the Orchard Freshness</h3>
-            <p className="text-white/70 mb-8 max-w-lg mx-auto text-sm md:text-base">
-              Orders are now open for the current season. Fresh batches arrive every Tuesday and Friday.
-            </p>
+            
+
             <a 
               href="https://wa.me/919725131748" 
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-full font-bold transition-all transform hover:scale-105 active:scale-95 shadow-xl"

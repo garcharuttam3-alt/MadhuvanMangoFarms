@@ -27,28 +27,64 @@ const features = [
 
 const reviews = [
   {
-    name: "Rahul Patel",
-    city: "Mumbai, MH",
+    name: "Richen Padaliya",
+    city: "Rajkot, GJ",
     rating: 5,
-    text: "Excellent service, very fast and professional. The Alphonsos were incredibly sweet and reached me in perfect condition!",
+    text: "Absolutely loved the mango quality! Sweet, juicy, and truly farm fresh. Rajkot delivery was super fast!",
   },
   {
-    name: "Priya Shah",
+    name: "Mahesh Thakor",
     city: "Ahmedabad, GJ",
     rating: 5,
-    text: "Amazing experience. Quality work and great support team. The packaging felt very premium and eco-friendly.",
+    text: "Best Alphonso mangoes I’ve had in years. Packaging was top-class and eco-friendly.",
   },
   {
-    name: "Amit Verma",
-    city: "New Delhi, DL",
-    rating: 4,
-    text: "Good service overall, slight delay due to weather but the mangoes were worth the wait. Naturally ripened taste!",
-  },
-  {
-    name: "Sneha Reddy",
-    city: "Hyderabad, TS",
+    name: "Shivani Khanpara",
+    city: "Keshod, GJ",
     rating: 5,
-    text: "Finally found authentic farm-direct mangoes. The difference in taste compared to market-bought ones is huge.",
+    text: "Taste is just amazing! You can clearly feel it's naturally ripened. Will order again!",
+  },
+  {
+    name: "Ankit C. Patel",
+    city: "Morbi, GJ",
+    rating: 4,
+    text: "Very good quality mangoes. Slight delay but worth it. Freshness was excellent!",
+  },
+  {
+    name: "Pinal Kalola",
+    city: "Junagadh, GJ",
+    rating: 5,
+    text: "Authentic farm mangoes! Way better than market ones. Loved the sweetness.",
+  },
+  {
+    name: "Chirag Vachani",
+    city: "Jamnagar, GJ",
+    rating: 5,
+    text: "Super fresh and perfectly ripened mangoes. Delivery experience was smooth.",
+  },
+  {
+    name: "Yash Vora",
+    city: "Surat, GJ",
+    rating: 5,
+    text: "Premium quality mangoes! Taste, aroma, everything was just perfect.",
+  },
+  {
+    name: "Harsh Vaghasiya",
+    city: "Bhavnagar, GJ",
+    rating: 5,
+    text: "Highly recommended! Farm-direct mangoes really make a difference.",
+  },
+  {
+    name: "Neel Prajapati",
+    city: "Vadodara, GJ",
+    rating: 4,
+    text: "Very nice taste and good packaging. Will definitely order again.",
+  },
+  {
+    name: "Khushbu Makadiya",
+    city: "Vapi, GJ",
+    rating: 5,
+    text: "Loved the quality and freshness. Mangoes were juicy and naturally sweet.",
   },
 ];
 
@@ -135,7 +171,23 @@ const WhyChooseSection = () => {
         {/* --- REVIEWS SLIDER SECTION --- */}
         <div className="mt-24 relative max-w-4xl mx-auto">
           <div className="text-center mb-10">
-            <h3 className="text-2xl font-bold font-heading">What Our Community Says</h3>
+            <div className="text-center mb-10">
+  
+  {/* Main Heading */}
+  <h3 className="text-2xl md:text-3xl font-bold font-heading text-gray-800">
+    What People{" "}
+    <span className="font-script text-green-600 text-3xl md:text-4xl">
+      Say
+    </span>
+    ?
+  </h3>
+
+  {/* Subtitle */}
+  <p className="mt-2 text-sm md:text-base text-gray-500">
+    About Our <span className="font-semibold text-gray-700">Gir Kesar Mango</span>
+  </p>
+
+</div>
           </div>
 
           <div className="relative overflow-hidden px-4 py-10">

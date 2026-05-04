@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -56,9 +56,17 @@
     --whatsapp-hover: 142 70% 40%;
 
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(40 33% 96% / 0.9), hsl(42 95% 55% / 0.2));
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(40 33% 96% / 0.9),
+      hsl(42 95% 55% / 0.2)
+    );
     --gradient-mango: linear-gradient(135deg, hsl(42 95% 55%), hsl(30 90% 50%));
-    --gradient-leaf: linear-gradient(135deg, hsl(110 55% 35%), hsl(110 45% 45%));
+    --gradient-leaf: linear-gradient(
+      135deg,
+      hsl(110 55% 35%),
+      hsl(110 45% 45%)
+    );
     --gradient-warm: linear-gradient(180deg, hsl(40 33% 96%), hsl(35 25% 90%));
 
     /* Shadows */
@@ -113,7 +121,12 @@
     @apply bg-background text-foreground font-body antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }
@@ -210,7 +223,8 @@
 
 /* Custom Animations */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(0deg);
   }
   50% {
@@ -219,7 +233,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 hsl(142 70% 45% / 0.4);
   }
   50% {
@@ -228,7 +243,8 @@
 }
 
 @keyframes sway {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotate(-3deg);
   }
   50% {
@@ -261,8 +277,23 @@
 
 /* Watercolor texture overlay */
 .watercolor-texture {
-  background-image: 
-    radial-gradient(ellipse at 20% 30%, hsl(42 95% 55% / 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 70%, hsl(110 55% 35% / 0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 50% 50%, hsl(30 90% 50% / 0.04) 0%, transparent 70%);
+  background-image:
+    radial-gradient(
+      ellipse at 20% 30%,
+      hsl(42 95% 55% / 0.08) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 80% 70%,
+      hsl(110 55% 35% / 0.06) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse at 50% 50%,
+      hsl(30 90% 50% / 0.04) 0%,
+      transparent 70%
+    );
+}
+.font-script {
+  font-family: "Dancing Script", cursive;
 }

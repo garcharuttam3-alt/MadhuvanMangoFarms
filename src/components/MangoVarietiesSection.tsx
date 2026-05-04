@@ -46,60 +46,105 @@ const MangoVarietiesSection = () => {
           <div className="bg-card rounded-[2rem] shadow-card overflow-hidden border border-border/50">
             <div className="grid md:grid-cols-2 gap-0">
               {/* Image Section */}
-              <motion.div 
-                className="relative bg-gradient-to-br from-mango-cream via-mango-yellow/20 to-mango-cream p-8 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[450px]"
-                whileHover={{ scale: 1.02 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                {/* Decorative circles */}
-                <div className="absolute top-8 left-8 w-20 h-20 bg-mango-yellow/20 rounded-full blur-xl" />
-                <div className="absolute bottom-12 right-12 w-32 h-32 bg-mango-green/10 rounded-full blur-2xl" />
-                
-                {/* Badges row — always same line, never overlap */}
-                <div className="absolute top-4 sm:top-6 left-4 right-4 sm:left-6 sm:right-6 flex items-center justify-between gap-2 z-10">
-                  {/* Queen Badge */}
-                  <motion.div
-                    className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5 shrink-0"
-                    animate={{ scale: [1, 1.05, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                  >
-                    <Award className="w-3.5 h-3.5" />
-                    Queen of Mangoes
-                  </motion.div>
+             <motion.div 
+  className="relative bg-gradient-to-br from-mango-cream via-mango-yellow/20 to-mango-cream p-8 md:p-12 flex items-center justify-center min-h-[300px] md:min-h-[450px] overflow-hidden rounded-3xl"
+  whileHover={{ scale: 1.03 }}
+  transition={{ type: "spring", stiffness: 200, damping: 12 }}
+>
 
-                  {/* Season Badge */}
-                  <div className="bg-secondary text-secondary-foreground text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg shrink-0">
-                    🗓️ May - July
-                  </div>
-                </div>
-
-                <div className="w-full flex justify-center items-center">
-  <motion.img
-    src={mangoKesar}
-    alt="Premium Kesar Mango"
-    className="
-      w-full 
-      max-w-[180px] 
-      sm:max-w-[220px] 
-      md:max-w-[300px] 
-      h-auto 
-      object-contain 
-      drop-shadow-2xl 
-      z-10
-      mt-10
-    "
-    animate={{ 
-      y: [0, -6, 0],
-      rotate: [0, 1.5, -1.5, 0]
+  {/* 🌟 Animated Glow Background */}
+  <motion.div
+    className="absolute w-60 h-60 bg-yellow-300/30 rounded-full blur-3xl"
+    animate={{
+      scale: [1, 1.3, 1],
+      opacity: [0.3, 0.6, 0.3],
     }}
-    transition={{ 
-      duration: 5, 
-      repeat: Infinity, 
-      ease: "easeInOut" 
+    transition={{
+      duration: 5,
+      repeat: Infinity,
+      ease: "easeInOut",
     }}
   />
-</div>
-              </motion.div>
+
+  {/* Decorative circles */}
+  <div className="absolute top-8 left-8 w-20 h-20 bg-mango-yellow/20 rounded-full blur-xl" />
+  <div className="absolute bottom-12 right-12 w-32 h-32 bg-mango-green/10 rounded-full blur-2xl" />
+
+  {/* 🏷️ Badges */}
+  <div className="absolute top-4 sm:top-6 left-4 right-4 sm:left-6 sm:right-6 flex items-center justify-between gap-2 z-20">
+
+    {/* Queen Badge */}
+    <motion.div
+      className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1.5"
+      animate={{ scale: [1, 1.08, 1] }}
+      transition={{ duration: 2, repeat: Infinity }}
+    >
+      <Award className="w-3.5 h-3.5" />
+      Queen of Mangoes
+    </motion.div>
+
+    {/* Season Badge */}
+    <motion.div
+      className="bg-secondary text-secondary-foreground text-xs sm:text-sm font-bold px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-lg"
+      whileHover={{ scale: 1.05 }}
+    >
+      🗓️ May - July
+    </motion.div>
+
+  </div>
+
+  {/* 🍃 Floating Shine Effect */}
+  <motion.div
+    className="absolute w-24 h-24 bg-white/20 blur-xl rounded-full top-16 left-12"
+    animate={{
+      x: [0, 20, 0],
+      y: [0, -10, 0],
+      opacity: [0.2, 0.5, 0.2],
+    }}
+    transition={{
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    }}
+  />
+
+  {/* 🥭 Mango Image */}
+  <div className="w-full flex justify-center items-center relative z-10">
+
+    <motion.img
+      src={mangoKesar}
+      alt="Premium Kesar Mango"
+      className="
+        w-full
+        mt-10
+        max-w-[250px] 
+        sm:max-w-[220px] 
+        md:max-w-[300px] 
+        h-auto 
+        object-contain
+      "
+
+      animate={{
+        y: [0, -14, 0],
+        rotate: [0, 2, -2, 0],
+        scale: [1, 1.06, 1],
+        filter: [
+          "drop-shadow(0px 20px 30px rgba(0,0,0,0.15))",
+          "drop-shadow(0px 35px 50px rgba(0,0,0,0.25))",
+          "drop-shadow(0px 20px 30px rgba(0,0,0,0.15))",
+        ],
+      }}
+
+      transition={{
+        duration: 5,
+        repeat: Infinity,
+        ease: "easeInOut",
+      }}
+    />
+
+  </div>
+
+</motion.div>
 
               {/* Content Section */}
               <div className="p-8 md:p-12 flex flex-col justify-center">
@@ -114,11 +159,7 @@ const MangoVarietiesSection = () => {
                   Kesar Mango
                 </h3>
 
-                <p className="text-muted-foreground text-lg leading-relaxed mb-6">
-                  Known as the "Queen of Mangoes", featuring saffron-colored flesh with 
-                  a unique sweet-tangy taste and aromatic fragrance. Naturally ripened 
-                  with no chemicals — pure, authentic, and delicious.
-                </p>
+                
 
                 {/* Features */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
