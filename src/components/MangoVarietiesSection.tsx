@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Star, Leaf, Award, MessageCircle } from "lucide-react";
-import mangoKesar from "@/assets/mango-kesar.png";
+import mangoKesar from "@/assets/mango.jpeg";
 
 const MangoVarietiesSection = () => {
   const whatsappUrl = "https://wa.me/919725131748?text=Hi%2C%20I%20want%20to%20order%20Kesar%20Mango.";
