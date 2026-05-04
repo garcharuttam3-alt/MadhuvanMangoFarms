@@ -4,6 +4,7 @@ import founder1 from "@/assets/founder1.jpeg";
 import founder2 from "@/assets/founder2.jpeg";
 import founder3 from "@/assets/founder3.jpeg";
 import { motion } from "framer-motion";
+import Footer from "@/components/Footer";
 
 const founders = [
   {
@@ -95,8 +96,10 @@ const FounderPage = () => {
             <div className="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-purple-500 to-pink-500 group-hover:w-full transition-all duration-500 rounded-b-3xl"></div>
 
           </motion.div>
+          
         ))}
       </div>
+      <Footer />
     </div>
   );
 };

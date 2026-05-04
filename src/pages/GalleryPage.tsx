@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
@@ -90,6 +91,7 @@ const GalleryPage = (): JSX.Element => {
           </div>
         </div>
       )}
+      <Footer />
     </div>
   );
 };
