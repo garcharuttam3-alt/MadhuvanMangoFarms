@@ -7,7 +7,7 @@ import MangoVarietiesSection from "@/components/MangoVarietiesSection";
 import WhyChooseSection from "@/components/WhyChooseSection";
 import JourneySection from "@/components/JourneySection";
 import HowToOrderSection from "@/components/HowToOrderSection";
-import GallerySection from "@/components/GallerySection";
+
 import AboutSection from "@/components/AboutSection";
 import Footer from "@/components/Footer";
 import FloatingWhatsApp from "@/components/FloatingWhatsApp";
@@ -55,10 +55,7 @@ const Index = () => {
           <HowToOrderSection />
         </section>
 
-        <section id="gallery" className="px-4 sm:px-6 md:px-10 lg:px-16">
-          <GallerySection />
-        </section>
-
+        
         <section id="about" className="px-4 sm:px-6 md:px-10 lg:px-16">
           <AboutSection />
         </section>
