@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Phone, MapPin, Clock, Mail } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Facebook, Instagram, Linkedin } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => {
@@ -8,7 +8,7 @@ const Footer = () => {
       {/* Main Footer Content */}
       <div className="section-padding pb-8">
         <div className="container-custom mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
             {/* Brand Column */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -85,8 +85,11 @@ const Footer = () => {
                   <Phone className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
                   <div>
                     <p className="text-cream text-sm font-medium">Phone / WhatsApp</p>
-                    <a href="tel:+919725131748" className="text-cream-dark/70 text-sm hover:text-primary transition-colors">
+                    <a href="tel:+919725131748" className="text-cream-dark/70 text-sm hover:text-primary transition-colors block">
                       +91 97251 31748
+                    </a>
+                    <a href="tel:+919726517095" className="text-cream-dark/70 text-sm hover:text-primary transition-colors block">
+                      +91 97265 17095
                     </a>
                   </div>
                 </li>
@@ -105,7 +108,7 @@ const Footer = () => {
                   <div>
                     <p className="text-cream text-sm font-medium">Location</p>
                     <p className="text-cream-dark/70 text-sm">
-                      At bamanasa gir Ta.talala<br /> Gujarat , India - 362140
+                      At bamanasa gir, Ta.talala<br /> Gujarat , India - 362140
                     </p>
                   </div>
                 </li>
@@ -140,6 +143,54 @@ const Footer = () => {
                 <div className="space-y-2 text-xs text-cream-dark/70">
                   <p>✓ Kesar: May - July</p>
                 </div>
+              </div>
+            </motion.div>
+
+            {/* Follow Us */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <h3 className="text-cream font-heading font-bold text-lg mb-6">
+                Follow Us
+              </h3>
+              <div className="flex flex-col gap-4">
+                {[
+                  {
+                    icon: Facebook,
+                    label: "Facebook",
+                    href: "https://www.facebook.com/people/Madhuvan-Mango-Farm/pfbid0eWTexzXUbLLbhrEcxAdUHtTHZs4NEkruc2qgFrUSmUyLTtYFXQHYgqKWVpGNXdrPl/",
+                    color: "text-blue-500",
+                  },
+                  {
+                    icon: Instagram,
+                    label: "Instagram",
+                    href: "https://www.instagram.com/madhuvanmango/",
+                    color: "text-pink-500",
+                  },
+                  {
+                    icon: Linkedin,
+                    label: "LinkedIn",
+                    href: "https://www.linkedin.com/company/madhuvan-mango-farm",
+                    color: "text-sky-600",
+                  },
+                ].map(({ icon: Icon, label, href, color }) => (
+                  <motion.a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={label}
+                    className={`flex items-center gap-3 ${color} transition-opacity duration-200 hover:opacity-75`}
+                    whileHover={{ scale: 1.05, x: 4 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Icon className="w-5 h-5 shrink-0" />
+                    <span className="text-cream-dark/80 text-sm">{label}</span>
+                  </motion.a>
+                ))}
               </div>
             </motion.div>
 
