@@ -15,7 +15,7 @@ const navLinks: NavLinkType[] = [
   { href: "#why-us", label: "Why Us" },
   { href: "#journey", label: "Process" },
   { href: "/gallery", label: "Gallery" },
-  { href: "#about", label: "About" },
+  { href: "/about", label: "About" },
   { href: "#contact", label: "Contact" },
 ];
 

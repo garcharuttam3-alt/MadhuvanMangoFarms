@@ -56,9 +56,7 @@ const Index = () => {
         </section>
 
         
-        <section id="about" className="px-4 sm:px-6 md:px-10 lg:px-16">
-          <AboutSection />
-        </section>
+       
 
         {/* OPTIONAL: If you keep "Contact" in navbar */}
         {/* <section id="contact" className="px-4 sm:px-6 md:px-10 lg:px-16">
