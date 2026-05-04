@@ -3,7 +3,7 @@ import { Star, Leaf, Award, MessageCircle } from "lucide-react";
 import mangoKesar from "@/assets/mango-kesar.png";
 
 const MangoVarietiesSection = () => {
-  const whatsappUrl = "https://wa.me/919725131748?text=Hi%2C%20I%20want%20to%20order%20Kesar%20Mango%20%E2%80%93%201%20dozen.";
+  const whatsappUrl = "https://wa.me/919725131748?text=Hi%2C%20I%20want%20to%20order%20Kesar%20Mango.";
 
   return (
     <section id="varieties" className="section-padding bg-gradient-warm watercolor-texture">
@@ -151,7 +151,7 @@ const MangoVarietiesSection = () => {
 {/* Price Section */}
 <div className="text-center sm:text-left w-full " >
   <p className="text-sm text-muted-foreground mb-2">
-    Price per dozen
+    Price per 10 Kg
   </p>
  
   {/* Size Options (Fixed Responsive Grid) */}
@@ -159,38 +159,38 @@ const MangoVarietiesSection = () => {
 
     {/* Big */}
     <a
-      href="https://wa.me/919725131748?text=I want Big Size (28-30 mangoes) ₹1500"
+      href="https://wa.me/919725131748?text=I want Big Size (30-34 mangoes) ₹1600"
       target="_blank"
       rel="noopener noreferrer"
       className=" border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
     >
       <p className="font-semibold text-sm">Big 🥭</p>
-      <p className="text-xs text-muted-foreground">28–30 pcs</p>
-      <p className="text-lg font-bold text-primary">₹1500</p>
+      <p className="text-xs text-muted-foreground">30–34 pcs</p>
+      <p className="text-lg font-bold text-primary">₹1600</p>
     </a>
 
     {/* Medium */}
     <a
-      href="https://wa.me/919725131748?text=I want Medium Size (33-38 mangoes) ₹1250"
+      href="https://wa.me/919725131748?text=I want Medium Size (35-39 mangoes) ₹1400"
       target="_blank"
       rel="noopener noreferrer"
       className=" border-2 border-primary rounded-lg p-4 text-center shadow-md w-full scale-[1.02]"
     >
       <p className="font-semibold text-sm">Medium ⭐</p>
-      <p className="text-xs text-muted-foreground">33–38 pcs</p>
-      <p className="text-lg font-bold text-primary">₹1250</p>
+      <p className="text-xs text-muted-foreground">35–39 pcs</p>
+      <p className="text-lg font-bold text-primary">₹1400</p>
     </a>
 
     {/* Small */}
     <a
-      href="https://wa.me/919725131748?text=I want Small Size (38-42 mangoes) ₹1000"
+      href="https://wa.me/919725131748?text=I want Small Size (40-44 mangoes) ₹1200"
       target="_blank"
       rel="noopener noreferrer"
       className=" border rounded-lg p-4 text-center hover:border-primary hover:shadow-md transition-all duration-200 w-full"
     >
       <p className="font-semibold text-sm">Small 🥭</p>
-      <p className="text-xs text-muted-foreground">38–42 pcs</p>
-      <p className="text-lg font-bold text-primary">₹1000</p>
+      <p className="text-xs text-muted-foreground">40–44pcs</p>
+      <p className="text-lg font-bold text-primary">₹1200</p>
     </a>
 
   </div>
