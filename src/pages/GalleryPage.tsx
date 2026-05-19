@@ -1,96 +1,308 @@
 import { useEffect, useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
+import gallery1 from "@/assets/1.jpg";
+import gallery2 from "@/assets/2.jpg";
+import gallery3 from "@/assets/3.jpg";
+import gallery4 from "@/assets/4.jpg";
+import gallery5 from "@/assets/5.jpg";
+import gallery6 from "@/assets/6.jpg";
+import gallery7 from "@/assets/7.jpg";
+import gallery8 from "@/assets/8.jpg";
+import gallery9 from "@/assets/9.jpg";
+import gallery10 from "@/assets/10.jpg";
+import gallery11 from "@/assets/11.jpg";
+import gallery12 from "@/assets/12.jpg";
+import gallery13 from "@/assets/13.jpg";
+import gallery14 from "@/assets/14.jpg";
+import gallery15 from "@/assets/15.jpg";
+import gallery16 from "@/assets/16.jpg";
+import gallery17 from "@/assets/17.jpg";
+import gallery18 from "@/assets/18.jpg";
+import gallery19 from "@/assets/19.jpg";
+import gallery20 from "@/assets/20.jpg";
+import gallery21 from "@/assets/21.jpg";
+import gallery22 from "@/assets/22.jpg";
+import gallery23 from "@/assets/23.jpg";
+import gallery24 from "@/assets/24.jpg";
 
-type GalleryImage = {
-  src: string;
-  alt: string;
-};
-
-const galleryImages: GalleryImage[] = [
-  { src: gallery1, alt: "Farmers harvesting mangoes at sunset" },
-  { src: gallery2, alt: "Careful packaging of fresh mangoes" },
-  { src: gallery3, alt: "Mango tree laden with ripe fruits" },
-  { src: gallery4, alt: "Fresh mango delivery unboxing" },
-  { src: gallery1, alt: "Farm view" },
-  { src: gallery2, alt: "Sorting mangoes" },
-  { src: gallery3, alt: "Tree close view" },
-  { src: gallery4, alt: "Delivery packing" },
+const galleryImages = [
+  gallery1,
+  gallery2,
+  gallery3,
+  gallery4,
+  gallery5,
+  gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery12,
+  gallery13,
+  gallery14,
+  gallery15,
+  gallery16,
+  gallery17,
+  gallery18,
+  gallery19,
+  gallery20,
+  gallery21,
+  gallery22,
+  gallery23,
+  gallery24,
 ];
 
 const GalleryPage = (): JSX.Element => {
-  const [selectedImage, setSelectedImage] = useState<GalleryImage | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % 5);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
+  const nextImage = () => {
+    if (selectedIndex === null) return;
+
+    setSelectedIndex((selectedIndex + 1) % galleryImages.length);
+  };
+
+  const prevImage = () => {
+    if (selectedIndex === null) return;
+
+    setSelectedIndex(
+      (selectedIndex - 1 + galleryImages.length) % galleryImages.length
+    );
+  };
+
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-b from-orange-50 via-white to-orange-100 overflow-hidden">
       <Header />
 
-      <section className="px-3 sm:px-6 md:px-10 lg:px-16 py-10 sm:py-16 mt-20">
+      <section className="px-3 sm:px-6 md:px-10 py-6 sm:py-12 mt-16">
         <div className="max-w-7xl mx-auto">
 
           {/* Header */}
-          <div className="text-center mb-8 sm:mb-12">
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-8"
+          >
+
+            <div className="inline-block px-4 py-1.5 rounded-full bg-orange-100 text-orange-600 text-xs font-semibold mb-4">
+              Premium Mango Collection
+            </div>
+
+            <h1 className="text-2xl sm:text-5xl font-black tracking-tight mb-3">
               Mango Farm Gallery
             </h1>
+
             <p className="text-sm sm:text-base text-muted-foreground max-w-xl mx-auto">
-              A simple look at our farm, harvesting, and fresh mangoes.
+              Explore our beautiful mango farms and premium fresh mango collection directly from Gujarat farms.
             </p>
+          </motion.div>
+
+          {/* Small Mobile Slider */}
+          <div className="relative mb-6">
+
+            <div className="overflow-hidden rounded-3xl">
+              <motion.img
+                key={currentSlide}
+                src={galleryImages[currentSlide]}
+                initial={{ opacity: 0.4, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                className="w-full h-[180px] sm:h-[300px] object-cover rounded-3xl"
+              />
+            </div>
+
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent rounded-3xl" />
+
+            {/* Text */}
+            <div className="absolute bottom-4 left-4 text-white">
+              <h2 className="text-lg sm:text-3xl font-bold">
+                Fresh Mangoes
+              </h2>
+
+              <p className="text-xs sm:text-sm text-white/80">
+                Directly From Farm
+              </p>
+            </div>
+
+            {/* Dots */}
+            <div className="absolute bottom-4 right-4 flex gap-2">
+              {[0, 1, 2, 3, 4].map((dot) => (
+                <div
+                  key={dot}
+                  className={`h-2 rounded-full transition-all duration-300 ${
+                    currentSlide === dot
+                      ? "w-6 bg-white"
+                      : "w-2 bg-white/50"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
 
-          {/* ✅ Masonry Layout (Responsive) */}
-          <div className="columns-2 sm:columns-2 md:columns-3 lg:columns-4 gap-3 sm:gap-6 space-y-3 sm:space-y-6">
+          {/* Premium Mobile First Gallery */}
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2 sm:gap-3">
+
             {galleryImages.map((image, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="break-inside-avoid overflow-hidden rounded-md sm:rounded-lg cursor-pointer"
-                onClick={() => setSelectedImage(image)}
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.35,
+                  delay: index * 0.02,
+                }}
+                whileHover={{
+                  y: -4,
+                }}
+                whileTap={{ scale: 0.96 }}
+                onClick={() => setSelectedIndex(index)}
+                className={`
+                  relative overflow-hidden rounded-2xl cursor-pointer group
+                  bg-white shadow-sm
+                  
+                  ${
+                    index % 7 === 0
+                      ? "col-span-2"
+                      : ""
+                  }
+                `}
               >
+
                 <img
-                  src={image.src}
-                  alt={image.alt}
+                  src={image}
                   loading="lazy"
-                  className="w-full h-auto object-cover transition duration-300 hover:scale-105"
+                  className="
+                    w-full
+                    h-28
+                    sm:h-40
+                    md:h-52
+                    object-cover
+                    transition duration-500
+                    group-hover:scale-110
+                  "
                 />
-              </div>
+
+                {/* Gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
+
+                {/* Small Floating Badge */}
+                <div className="absolute top-2 right-2 bg-white/80 backdrop-blur-md rounded-full px-2 py-1">
+                  <div className="w-1.5 h-1.5 rounded-full bg-orange-500" />
+                </div>
+
+              </motion.div>
             ))}
+
+          </div>
+
+          {/* Bottom Cards */}
+          <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-8">
+
+            <div className="bg-white rounded-2xl p-3 sm:p-5 text-center shadow-sm">
+              <h2 className="text-lg sm:text-3xl font-black text-orange-500">
+                24+
+              </h2>
+
+              <p className="text-[10px] sm:text-sm text-muted-foreground">
+                Farm Photos
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-3 sm:p-5 text-center shadow-sm">
+              <h2 className="text-lg sm:text-3xl font-black text-orange-500">
+                100%
+              </h2>
+
+              <p className="text-[10px] sm:text-sm text-muted-foreground">
+                Natural
+              </p>
+            </div>
+
+            <div className="bg-white rounded-2xl p-3 sm:p-5 text-center shadow-sm">
+              <h2 className="text-lg sm:text-3xl font-black text-orange-500">
+                Fresh
+              </h2>
+
+              <p className="text-[10px] sm:text-sm text-muted-foreground">
+                Delivery
+              </p>
+            </div>
+
           </div>
 
         </div>
       </section>
 
-      {/* 🔥 Lightbox Popup */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div
-            className="max-w-3xl w-full"
-            onClick={(e) => e.stopPropagation()}
+      {/* Lightbox */}
+      <AnimatePresence>
+        {selectedIndex !== null && (
+          <motion.div
+            className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
           >
-            <img
-              src={selectedImage.src}
-              alt={selectedImage.alt}
-              className="w-full h-auto rounded-lg"
+
+            {/* Close */}
+            <button
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-5 right-5 z-50 bg-white/10 backdrop-blur-md p-2 rounded-full text-white"
+            >
+              <X size={22} />
+            </button>
+
+            {/* Prev */}
+            <button
+              onClick={prevImage}
+              className="absolute left-3 sm:left-6 z-50 bg-white/10 backdrop-blur-md p-2 rounded-full text-white"
+            >
+              <ChevronLeft size={26} />
+            </button>
+
+            {/* Next */}
+            <button
+              onClick={nextImage}
+              className="absolute right-3 sm:right-6 z-50 bg-white/10 backdrop-blur-md p-2 rounded-full text-white"
+            >
+              <ChevronRight size={26} />
+            </button>
+
+            {/* Selected Image */}
+            <motion.img
+              key={galleryImages[selectedIndex]}
+              src={galleryImages[selectedIndex]}
+              initial={{ scale: 0.92, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.92, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="max-h-[85vh] max-w-[95vw] rounded-3xl object-contain shadow-2xl"
             />
 
-            {/* Caption */}
-            <p className="text-center text-white text-sm mt-3">
-              {selectedImage.alt}
-            </p>
-          </div>
-        </div>
-      )}
+            {/* Counter */}
+            <div className="absolute bottom-5 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm">
+              {selectedIndex + 1} / {galleryImages.length}
+            </div>
+
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <Footer />
     </div>
   );
