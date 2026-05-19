@@ -4,11 +4,7 @@ import Footer from "@/components/Footer";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-import gallery1 from "@/assets/1.jpg";
-import gallery2 from "@/assets/2.jpg";
-import gallery3 from "@/assets/3.jpg";
-import gallery4 from "@/assets/4.jpg";
-import gallery5 from "@/assets/5.jpg";
+
 import gallery6 from "@/assets/6.jpg";
 import gallery7 from "@/assets/7.jpg";
 import gallery8 from "@/assets/8.jpg";
@@ -30,11 +26,7 @@ import gallery23 from "@/assets/23.jpg";
 import gallery24 from "@/assets/24.jpg";
 
 const galleryImages = [
-  gallery1,
-  gallery2,
-  gallery3,
-  gallery4,
-  gallery5,
+ 
   gallery6,
   gallery7,
   gallery8,
