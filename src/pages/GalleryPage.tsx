@@ -20,10 +20,6 @@ import gallery17 from "@/assets/17.jpg";
 import gallery18 from "@/assets/18.jpg";
 import gallery19 from "@/assets/19.jpg";
 import gallery20 from "@/assets/20.jpg";
-import gallery21 from "@/assets/21.jpg";
-import gallery22 from "@/assets/22.jpg";
-import gallery23 from "@/assets/23.jpg";
-import gallery24 from "@/assets/24.jpg";
 
 const galleryImages = [
  
@@ -42,10 +38,7 @@ const galleryImages = [
   gallery18,
   gallery19,
   gallery20,
-  gallery21,
-  gallery22,
-  gallery23,
-  gallery24,
+
 ];
 
 const GalleryPage = (): JSX.Element => {
