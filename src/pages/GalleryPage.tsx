@@ -13,10 +13,10 @@ import gallery10 from "@/assets/10.jpg";
 import gallery11 from "@/assets/11.jpg";
 import gallery12 from "@/assets/12.jpg";
 
-import gallery16 from "@/assets/16.jpg";
-import gallery17 from "@/assets/17.jpg";
-import gallery18 from "@/assets/18.jpg";
-import gallery19 from "@/assets/19.jpg";
+import gallery13 from "@/assets/16.jpg";
+import gallery14 from "@/assets/17.jpg";
+import gallery15 from "@/assets/18.jpg";
+import gallery16 from "@/assets/19.jpg";
 
 
 const galleryImages = [
@@ -29,10 +29,10 @@ const galleryImages = [
   gallery11,
   gallery12,
 
+  gallery13,
+  gallery14,
+  gallery15,
   gallery16,
-  gallery17,
-  gallery18,
-  gallery19,
 
 
 ];
